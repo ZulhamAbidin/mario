@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <title>Videography Projects | Mario</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="Vidio Grapher Makassar">
+  <link rel="icon" href="assets/images/logo.webp" type="image/x-icon">
+  <link href="assets/css/plugins/animate.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="assets/fonts/inter/inter.css" id="main-font-link">
+  <link rel="stylesheet" href="assets/fonts/tabler-icons.min.css">
+  <link rel="stylesheet" href="assets/fonts/feather.css">
+  <link rel="stylesheet" href="assets/fonts/fontawesome.css">
+  <link rel="stylesheet" href="assets/fonts/material.css">
+  <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
+  <link rel="stylesheet" href="assets/css/style-preset.css">
+  <link rel="stylesheet" href="assets/css/landing.css">
+  <style>
+    body { background: #f3f5f7; color: #101820; font-family: 'Inter', sans-serif; }
+    .page-shell { max-width: 1200px; margin: 0 auto; padding: 2rem 1.25rem 3.5rem; }
+    #home .navbar { margin-bottom: 0 !important; }
+    #home .navbar-brand { display: none; }
+    .hero { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 420px; gap: 1.5rem; align-items: stretch; }
+    .hero-visual, .detail-card { overflow: hidden; background: #fff; border: 1px solid rgba(16, 24, 32, 0.08); border-radius: 1.2rem; box-shadow: 0 12px 20px rgba(16, 24, 32, 0.08); }
+    .hero-visual { min-height: 0; }
+    .hero-visual img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .detail-card { padding: 1.5rem; }
+    .eyebrow { margin-bottom: 0.75rem; color: #f4b942; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+    .detail-card h1 { margin-bottom: 0.75rem; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.1; }
+    .detail-card p { margin-bottom: 1.25rem; color: #4b5563; line-height: 1.8; }
+    .meta-list { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.25rem; }
+    .meta-list span { padding: 0.45rem 0.8rem; border: 1px solid rgba(244, 185, 66, 0.45); border-radius: 999px; background: #fdf7ea; color: #101820; font-size: 0.8rem; font-weight: 600; }
+    .back-link { display: inline-block; padding: 0.8rem 1.2rem; border-radius: 999px; background: #101820; color: #fff; text-decoration: none; font-weight: 600; }
+    .empty-projects { margin-top: 2rem; padding: 2rem; border: 1px dashed rgba(16, 24, 32, 0.2); border-radius: 1rem; color: #5b6b79; text-align: center; }
+    @media (max-width: 767.98px) { #home .navbar-brand { display: inline-block; } .hero { grid-template-columns: 1fr; grid-auto-rows: auto; } .hero-visual { min-height: 420px; } }
+  </style>
+</head>
+
+<body data-pc-preset="preset-1" data-pc-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme_contrast="" data-pc-theme="light" class="landing-page">
+  <header id="home">
+    <nav class="navbar navbar-expand-md navbar-light default mb-0">
+      <div class="container">
+        <a class="navbar-brand text-black ps-4 fw-semibold" href="index.html">Mario</a>
+        <button class="navbar-toggler rounded" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center">
+            <li class="nav-item px-1"><a class="nav-link" href="index.html">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <script>document.addEventListener('DOMContentLoaded', function () { var navToggler = document.querySelector('.navbar-toggler'); var navbarCollapse = document.querySelector('.navbar-collapse'); navToggler.addEventListener('click', function () { navbarCollapse.classList.toggle('show'); }); });</script>
+  </header>
+
+  <div class="page-shell">
+    <main>
+      <section class="hero">
+        <div class="hero-visual"><img src="assets/images/videography-projects/videography-projects.jfif" alt="Videography Projects showcase"></div>
+        <div class="detail-card">
+          <div class="eyebrow">My Service</div>
+          <h1>Videography Projects</h1>
+          <p>Halaman untuk menampilkan proyek videografi, dokumentasi acara, dan karya visual yang akan ditambahkan.</p>
+          <div class="meta-list"><span>Event</span><span>Documentary</span><span>Brand Video</span></div>
+          <a href="index.html#projects" class="back-link">Kembali</a>
+        </div>
+      </section>
+      <section class="empty-projects" aria-label="Videography projects">Project videografi akan ditambahkan di sini.</section>
+    </main>
+  </div>
+</body>
+
+</html>
