@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
   <link rel="stylesheet" href="assets/css/style-preset.css">
   <link rel="stylesheet" href="assets/css/landing.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
   <link rel="stylesheet" href="assets/css/index.css">
 
@@ -72,8 +73,8 @@
     </script>
   </header>
 
-  <div class="card social-profile jumbotron-image">
-    <img src="assets/images/gallery/jumbotron.png" alt="Mario" class="w-80 card-img-top">
+  <div class="card social-profile jumbotron-image" data-aos="fade-up" data-aos-duration="900">
+    <img src="assets/images/gallery/jumbotron-lanscape.png" alt="Mario" class="card-img-top">
     <div class="jumbotron-image-text" id="heroTypingText" aria-live="polite">Build Your Memory With Us</div>
   </div>
 
@@ -86,7 +87,7 @@
           <div>
 
             <!-- ===================================== About Me ====================================================== -->
-            <div id="about" class="card about-card">
+            <div id="about" class="card about-card" data-aos="fade-up">
               <div class="card-header about-card-header d-flex align-items-center">
                 <h5 class="about-card-title"><i class="ti ti-camera"></i>About me</h5>
               </div>
@@ -101,7 +102,7 @@
 
 
             <!-- ===================================== Behind the lens ====================================================== -->
-            <div class="card picture-card">
+            <div class="card picture-card" data-aos="fade-up" data-aos-delay="100">
               <div class="row g-0 align-items-stretch">
                 <div class="col-md-5">
                   <div id="projectImageCarousel" class="carousel slide picture-card-carousel" data-bs-ride="carousel">
@@ -161,7 +162,7 @@
 
 
             <!-- ===================================== Testimonials====================================================== -->
-            <section id="education" class="testimonials-section" aria-labelledby="testimonials-title">
+            <section id="education" class="testimonials-section" aria-labelledby="testimonials-title" data-aos="fade-up">
               <h2 id="testimonials-title" class="testimonials-heading"><span>Testimonials</span> from collaborators</h2>
               <div id="testimonialsCarousel" class="carousel slide testimonials-carousel" data-bs-ride="carousel">
                 <div id="desktopTestimonialsIndicators" class="carousel-indicators"></div>
@@ -195,7 +196,7 @@
 
 
             <!-- ===================================== Creative Stories ====================================================== -->
-            <section class="creative-section" aria-labelledby="creative-title">
+            <section class="creative-section" aria-labelledby="creative-title" data-aos="fade-up">
               <p class="creative-intro">
                 <span>Ready to bring your vision to life?</span>
                 Mari buat proyek berikutnya bersama.
@@ -220,7 +221,7 @@
             <!-- ================================= End Creative Stories ======================================================== -->
 
             <!-- ===================================== My Quality Service ==================================================== -->
-            <section id="projects" class="service-section" aria-labelledby="service-title">
+            <section id="projects" class="service-section" aria-labelledby="service-title" data-aos="fade-up">
               <h2 id="service-title" class="service-header">My Quality Service</h2>
               <div id="serviceGrid" class="service-grid"></div>
             </section>
@@ -257,6 +258,15 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 80
+    });
+  </script>
   <script src="assets/js/fonts/custom-font.js"></script>
   <script src="assets/js/pcoded.js"></script>
   <script src="assets/js/component.js"></script>
@@ -333,6 +343,26 @@
     }
 
     setTimeout(animateHeroMessage, 5000);
+
+    const heroImage = document.querySelector('.jumbotron-image > img');
+    const heroSection = document.querySelector('.jumbotron-image');
+    let isHeroParallaxScheduled = false;
+
+    function updateHeroParallax() {
+      const sectionOffset = window.scrollY - heroSection.offsetTop;
+      const parallaxOffset = Math.max(-120, Math.min(sectionOffset * 0.4, 120));
+      heroImage.style.transform = `translate3d(0, ${parallaxOffset}px, 0)`;
+      isHeroParallaxScheduled = false;
+    }
+
+    updateHeroParallax();
+
+    window.addEventListener('scroll', function () {
+      if (!isHeroParallaxScheduled) {
+        window.requestAnimationFrame(updateHeroParallax);
+        isHeroParallaxScheduled = true;
+      }
+    }, { passive: true });
 
    
     const testimonialData = [];

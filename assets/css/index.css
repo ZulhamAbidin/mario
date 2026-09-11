@@ -24,11 +24,33 @@
 
 .jumbotron-image {
   position: relative;
-  margin-top: 0 !important;
+  z-index: 0;
+  overflow: hidden;
+  margin-top: 72px !important;
+}
+
+.jumbotron-image > img {
+  display: block;
+  width: 100% !important;
+  height: calc(clamp(220px, 32vw, 440px) + 240px);
+  max-width: none;
+  position: relative;
+  top: -120px;
+  object-fit: cover;
+  will-change: transform;
 }
 
 #home .navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1100;
   margin-bottom: 0 !important;
+}
+
+#home {
+  position: relative;
+  z-index: 1100;
+  overflow: visible;
 }
 
 #home .navbar-brand {
@@ -39,6 +61,10 @@
   #home .navbar-brand {
     display: inline-block;
   }
+
+  .jumbotron-image {
+    margin-top: 64px !important;
+  }
 }
 
 .jumbotron-image-text {
@@ -46,18 +72,14 @@
   bottom: 8%;
   left: 50%;
   transform: translateX(-50%);
-  width: max-content;
+  width: 100%;
   max-width: calc(100% - 2rem);
-  padding: 0.8rem 1.4rem;
+  padding: 0;
   color: #fff;
   font-size: clamp(1.25rem, 4vw, 3rem);
   font-weight: 700;
   text-align: center;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
-  background: #101820;
-  border-left: 4px solid #f4b942;
-  border-radius: 0.35rem;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95), 0 6px 14px rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
 
