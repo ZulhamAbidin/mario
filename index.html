@@ -21,7 +21,6 @@
   <link rel="stylesheet" href="assets/css/style.css" id="main-style-link">
   <link rel="stylesheet" href="assets/css/style-preset.css">
   <link rel="stylesheet" href="assets/css/landing.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
   <link rel="stylesheet" href="assets/css/index.css">
 
@@ -73,8 +72,8 @@
     </script>
   </header>
 
-  <div class="card social-profile jumbotron-image" data-aos="fade-up" data-aos-duration="900">
-    <img src="assets/images/gallery/jumbotron-lanscape.png" alt="Mario" class="card-img-top">
+  <div class="card social-profile jumbotron-image">
+    <img src="assets/images/gallery/jumbotron-lanscape.png" alt="" aria-hidden="true" class="card-img-top">
     <div class="jumbotron-image-text" id="heroTypingText" aria-live="polite">Build Your Memory With Us</div>
   </div>
 
@@ -87,7 +86,7 @@
           <div>
 
             <!-- ===================================== About Me ====================================================== -->
-            <div id="about" class="card about-card" data-aos="fade-up">
+            <div id="about" class="card about-card">
               <div class="card-header about-card-header d-flex align-items-center">
                 <h5 class="about-card-title"><i class="ti ti-camera"></i>About me</h5>
               </div>
@@ -102,7 +101,7 @@
 
 
             <!-- ===================================== Behind the lens ====================================================== -->
-            <div class="card picture-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="card picture-card">
               <div class="row g-0 align-items-stretch">
                 <div class="col-md-5">
                   <div id="projectImageCarousel" class="carousel slide picture-card-carousel" data-bs-ride="carousel">
@@ -162,44 +161,31 @@
 
 
             <!-- ===================================== Testimonials====================================================== -->
-            <section id="education" class="testimonials-section" aria-labelledby="testimonials-title" data-aos="fade-up">
-              <h2 id="testimonials-title" class="testimonials-heading"><span>Testimonials</span> from collaborators</h2>
-              <div id="testimonialsCarousel" class="carousel slide testimonials-carousel" data-bs-ride="carousel">
-                <div id="desktopTestimonialsIndicators" class="carousel-indicators"></div>
-                <div id="desktopTestimonialsInner" class="carousel-inner">
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel"
-                  data-bs-slide="prev" aria-label="Testimonials sebelumnya">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel"
-                  data-bs-slide="next" aria-label="Testimonials berikutnya">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </button>
-              </div>
-              <div id="mobileTestimonialsCarousel"
-                class="carousel slide testimonials-carousel mobile-testimonials-carousel" data-bs-ride="carousel"
-                data-bs-interval="4500">
-                <div id="mobileTestimonialsIndicators" class="carousel-indicators"></div>
-                <div id="mobileTestimonialsInner" class="carousel-inner"></div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#mobileTestimonialsCarousel"
-                  data-bs-slide="prev" aria-label="Testimonials sebelumnya">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#mobileTestimonialsCarousel"
-                  data-bs-slide="next" aria-label="Testimonials berikutnya">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </button>
+            <section id="education" class="testimonials-section" aria-labelledby="testimonials-title">
+              <h2 id="testimonials-title" class="testimonials-heading text-center">Testimonials from collaborators</h2>
+              <br>
+              <div class="testimonials-table-wrap">
+                <table class="testimonials-table">
+                  <caption class="visually-hidden">Keterangan kegiatan dan acara dari para klien</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Nama</th>
+                      <th scope="col">Kegiatan/Acara</th>
+                      <th scope="col">Keterangan</th>
+                    </tr>
+                  </thead>
+                  <tbody id="testimonialsTableBody"></tbody>
+                </table>
               </div>
             </section>
             <!-- ================================= End Testimonials ======================================================== -->
 
 
             <!-- ===================================== Creative Stories ====================================================== -->
-            <section class="creative-section" aria-labelledby="creative-title" data-aos="fade-up">
+            <section class="creative-section" aria-labelledby="creative-title">
               <p class="creative-intro">
-                <span>Ready to bring your vision to life?</span>
-                Mari buat proyek berikutnya bersama.
+                <span>Mari buat proyek berikutnya bersama.</span>
+                Ready to bring your vision to life?
               </p>
               <div class="creative-visual">
                 <div id="creativeCarousel" class="carousel slide creative-carousel" data-bs-ride="carousel"
@@ -221,12 +207,13 @@
             <!-- ================================= End Creative Stories ======================================================== -->
 
             <!-- ===================================== My Quality Service ==================================================== -->
-            <section id="projects" class="service-section" aria-labelledby="service-title" data-aos="fade-up">
-              <h2 id="service-title" class="service-header">My Quality Service</h2>
+            <section id="projects" class="service-section" aria-labelledby="service-title">
+              <h2 id="service-title" class="text-center">My Quality Service</h2>
+              <br>
               <div id="serviceGrid" class="service-grid"></div>
             </section>
             <!-- ================================= End My Quality Service ==================================================== -->
-
+            
           </div>
         </div>
       </div>
@@ -235,38 +222,39 @@
 
   </div>
 
+  <section class="contact-section" aria-labelledby="contact-title">
+    <div class="contact-map">
+      <img class="contact-map-image" src="assets/images/gallery/sulawesi.jpg" alt="Peta wilayah Sulawesi">
+      <div class="contact-map-shade" aria-hidden="true"></div>
+      <div class="contact-content">
+        <div class="contact-panel">
+          <p class="contact-eyebrow">Let’s make something memorable</p>
+          <h2 id="contact-title">Contact Us</h2>
+          <p class="contact-copy">Punya cerita, acara, atau brand yang ingin dibuat lebih hidup? Saya siap membantu menerjemahkannya menjadi visual yang berkesan.</p>
+          <div class="contact-details">
+            <span>Based in Makassar</span>
+            <span>Available for creative projects</span>
+          </div>
+          <a class="contact-action" href="https://wa.me/6285240158775" target="_blank" rel="noopener">Open WhatsApp <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="contact-map-label">Sulawesi, Indonesia</p>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col my-1 wow fadeInUp" data-wow-delay="0.4s">
-          <p class="mb-0 text-center">
-            <span class="text-muted text-sm">© 2024 <a href="https://www.instagram.com/zlhm.a" class="text-dark">Zulham
-                Abidin</a>, <span><a
-                  href="https://www.instagram.com/rapidwebcraft.id/">RapidWebCraft.Id</a></span></span>
-          </p>
-        </div>
-        <div class="col-auto my-1">
-          <ul class="list-inline footer-sos-link mb-0">
-            <li class="list-inline-item wow fadeInUp" data-wow-delay="0.4s"><a
-                href="https://www.instagram.com/zlhm.a"><svg class="pc-icon">
-                  <use xlink:href="#custom-airplane"></use>
-                </svg></a>
-            </li>
-          </ul>
-        </div>
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="footer-kicker">Mario Visual Stories</span>
+        <strong>Ready to create something memorable?</strong>
+      </div>
+      <div class="footer-contact">
+        <span>Open for creative projects</span>
+        <a href="https://wa.me/6285240158775" target="_blank" rel="noopener">0852-4015-8775</a>
       </div>
     </div>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 700,
-      easing: 'ease-out-cubic',
-      once: true,
-      offset: 80
-    });
-  </script>
   <script src="assets/js/fonts/custom-font.js"></script>
   <script src="assets/js/pcoded.js"></script>
   <script src="assets/js/component.js"></script>
@@ -344,26 +332,6 @@
 
     setTimeout(animateHeroMessage, 5000);
 
-    const heroImage = document.querySelector('.jumbotron-image > img');
-    const heroSection = document.querySelector('.jumbotron-image');
-    let isHeroParallaxScheduled = false;
-
-    function updateHeroParallax() {
-      const sectionOffset = window.scrollY - heroSection.offsetTop;
-      const parallaxOffset = Math.max(-120, Math.min(sectionOffset * 0.4, 120));
-      heroImage.style.transform = `translate3d(0, ${parallaxOffset}px, 0)`;
-      isHeroParallaxScheduled = false;
-    }
-
-    updateHeroParallax();
-
-    window.addEventListener('scroll', function () {
-      if (!isHeroParallaxScheduled) {
-        window.requestAnimationFrame(updateHeroParallax);
-        isHeroParallaxScheduled = true;
-      }
-    }, { passive: true });
-
    
     const testimonialData = [];
 
@@ -403,24 +371,17 @@
     // diatas sini bro
     //end
 
-    const desktopTestimonialsInner = document.getElementById('desktopTestimonialsInner');
-    const desktopTestimonialsIndicators = document.getElementById('desktopTestimonialsIndicators');
-    const mobileTestimonialsInner = document.getElementById('mobileTestimonialsInner');
-    const mobileTestimonialsIndicators = document.getElementById('mobileTestimonialsIndicators');
+    const testimonialsTableBody = document.getElementById('testimonialsTableBody');
 
-    function testimonialCardTemplate(testimonial) {
-      return `<article class="testimonial-card">
-        <div class="testimonial-card-header">
-          <div class="testimonial-avatar" aria-hidden="true">${testimonial.initials}</div>
-          <div>
-            <h3 class="testimonial-name">${testimonial.name}</h3>
-            <p class="testimonial-role">${testimonial.role}</p>
-          </div>
-        </div>
-        <p class="testimonial-quote">${testimonial.quote}</p>
-        <span class="testimonial-mark" aria-hidden="true">“</span>
-      </article>`;
-    }
+    testimonialsTableBody.innerHTML = testimonialData.map(testimonial => `
+      <tr>
+        <td data-label="Nama">
+          <strong>${testimonial.name}</strong>
+        </td>
+        <td data-label="Kegiatan">${testimonial.role}</td>
+        <td data-label="Keterangan">${testimonial.quote}</td>
+      </tr>
+    `).join('');
 
     function addCarouselIndicator(container, target, index, label) {
       const indicator = document.createElement('button');
@@ -434,28 +395,6 @@
       }
       container.appendChild(indicator);
     }
-
-    desktopTestimonialsInner.innerHTML = '';
-    desktopTestimonialsIndicators.innerHTML = '';
-    mobileTestimonialsInner.innerHTML = '';
-    mobileTestimonialsIndicators.innerHTML = '';
-
-    for (let index = 0; index < testimonialData.length; index += 3) {
-      const slide = document.createElement('div');
-      slide.className = `carousel-item${index === 0 ? ' active' : ''}`;
-      slide.innerHTML = `<div class="row g-3">${testimonialData.slice(index, index + 3)
-        .map(testimonial => `<div class="col-md-4">${testimonialCardTemplate(testimonial)}</div>`).join('')}</div>`;
-      desktopTestimonialsInner.appendChild(slide);
-      addCarouselIndicator(desktopTestimonialsIndicators, '#testimonialsCarousel', index / 3, 'Testimonials');
-    }
-
-    testimonialData.forEach((testimonial, index) => {
-      const slide = document.createElement('div');
-      slide.className = `carousel-item${index === 0 ? ' active' : ''}`;
-      slide.innerHTML = testimonialCardTemplate(testimonial);
-      mobileTestimonialsInner.appendChild(slide);
-      addCarouselIndicator(mobileTestimonialsIndicators, '#mobileTestimonialsCarousel', index, 'Testimonials');
-    });
 
     // Tambahkan gambar Creative Stories baru cukup dengan satu baris addCreativeImage(...).
     const creativeImages = [];
@@ -484,21 +423,21 @@
 
     const serviceData = [
       {
-        title: 'Video Editing',
-        description: 'Motion Graphics, VFX, Speedrum, Style, Reels, dan Instagram Promotion yang siap meningkatkan engagement brand Anda.',
-        imageUrl: 'assets/images/gallery/jumbotron3.jpg',
+        title: 'Editing',
+        description: 'Motion Graphics, VFX, Speedramp, Dokumenter, Style, Reels Content Instagram, Real Estate promotion.',
+        imageUrl: 'assets/images/video-editing/editing.png',
         slug: 'video-editing'
       },
       {
         title: 'Videography Projects',
-        description: 'Dari konsep hingga eksekusi, kami menangkap setiap momen penting dengan gaya visual yang bersinar dan berkesan.',
+        description: 'Dari konsep hingga eksekusi visual, kami siap mewujudkan visi kreatifmu.',
         imageUrl: 'assets/images/gallery/jumbotron2.jpg',
         slug: 'videography-projects'
       },
       {
         title: 'Photography Sessions',
-        description: 'Wedding, family, branding, dan personal session dengan hasil foto yang hangat, natural, dan memikat.',
-        imageUrl: 'assets/images/gallery/jumbotron.png',
+        description: 'Wisuda, Wedding, Event, Family Gathering, Real estate.',
+        imageUrl: 'assets/images/photography-sessions/fotography.jpg',
         slug: 'photography-sessions'
       }
     ];
