@@ -28,7 +28,7 @@
   min-height: clamp(220px, 32vw, 440px);
   overflow: hidden;
   margin-top: 72px !important;
-  background-image: url('../images/gallery/jumbotron-lanscape.png');
+  background-image: url('../../upload/jumbotron-lanscape.png');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
