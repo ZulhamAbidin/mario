@@ -11,7 +11,7 @@
   <meta name="keyword" content="Vidio Grapher Makassar">
   <meta name="keyword" content="Vidio Grapher Makassar ">
   <meta name="keyword" content="Vidio Grapher">
-  <link rel="icon" href="assets/images/logo.webp" type="image/x-icon">
+  <link rel="icon" href="upload/logo.webp" type="image/x-icon">
   <link href="assets/css/plugins/animate.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="assets/fonts/inter/inter.css" id="main-font-link">
   <link rel="stylesheet" href="assets/fonts/tabler-icons.min.css">
@@ -195,9 +195,14 @@
       background: #101820;
     }
 
+    .video-card-heading {
+      padding: 0.9rem 1.15rem 0.8rem;
+      border-bottom: 3px solid #f4b942;
+      background: #fff;
+    }
+
     .video-card-content {
       padding: 1rem 1.15rem 1.15rem;
-      border-top: 3px solid #f4b942;
     }
 
     .video-card-title {
@@ -313,7 +318,7 @@
       <section class="hero">
         
         <div class="hero-visual">
-          <img src="assets/images/video-editing/editing.png" alt="Video Editing showcase" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          <img src="upload/editing.png" alt="Video Editing showcase" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
 
         <div class="detail-card">
@@ -339,13 +344,8 @@
     </main>
   </div>
 
+  <script src="tambah-data.js"></script>
   <script>
-    const videoData = [];
-
-    function addVideo(title, link, description = '') {
-      videoData.push({ title, link, description });
-    }
-
     function getYouTubeEmbedUrl(link) {
       try {
         const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|shorts\/|watch\?v=|\&v=)([^#\&\?]*).*/;
@@ -364,35 +364,22 @@
     function renderVideos() {
       const videoGallery = document.getElementById('videoGallery');
 
-      if (!videoGallery || videoData.length === 0) {
+      if (!videoGallery || videoEditingData.length === 0) {
         return;
       }
 
-      videoGallery.innerHTML = videoData.map(video => `
+      videoGallery.innerHTML = videoEditingData.map(video => `
         <article class="video-card">
+          <div class="video-card-heading">
+            <h3 class="video-card-title text-center">${video.title}</h3>
+          </div>
           <iframe class="video-frame" src="${getYouTubeEmbedUrl(video.link)}" title="${video.title}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           <div class="video-card-content">
-            <h3 class="video-card-title">${video.title}</h3>
             <p class="video-card-description">${video.description}</p>
           </div>
         </article>
       `).join('');
     }
-
-    // tambahkan video dibawah ini
-
-    addVideo('Showreel Video Editing', 'https://youtu.be/lU8wLhNPjM0?si=dgLLqDgU2LekmErk',
-      'Contoh showreel untuk menampilkan gaya editing dan alur visual.');
-
-    addVideo('Social Media Content', 'https://youtu.be/lU8wLhNPjM0?si=dgLLqDgU2LekmErk',
-      'Contoh video pendek untuk kebutuhan konten media sosial dan reels.');
-
-    addVideo('Promotional Video', 'https://youtu.be/lU8wLhNPjM0?si=dgLLqDgU2LekmErk',
-      'Contoh video promosi dengan visual yang dinamis dan menarik.');
-
-    addVideo('Promotional Video', 'https://youtu.be/lU8wLhNPjM0?si=dgLLqDgU2LekmErk',
-      'Contoh video promosi dengan visual yang dinamis dan menarik.');
-
 
     document.addEventListener('DOMContentLoaded', function () {
       renderVideos();
